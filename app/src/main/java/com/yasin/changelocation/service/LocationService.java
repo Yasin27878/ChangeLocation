@@ -4,9 +4,13 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
+import android.util.Log;
 
+import com.yasin.changelocation.bean.Address;
 import com.yasin.changelocation.core.Constants;
 import com.yasin.changelocation.utils.UpdateLocationTheard;
+
+import java.util.List;
 
 /**
  * Creator  : Yasin on 2016/11/5.
@@ -38,6 +42,12 @@ public class LocationService extends Service {
                 mTheard.isRuning = false;
             }
             mTheard = new UpdateLocationTheard();
+            List<Address> mAddressList = intent.getParcelableArrayListExtra(Constants.TAG_ADDRESS_LIST);
+            for (Address address : mAddressList) {
+                Log.d(TAG, "onStartCommand: " + address.toString());
+
+
+            }
 
         }
 

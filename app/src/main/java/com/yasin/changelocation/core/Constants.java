@@ -9,9 +9,14 @@ package com.yasin.changelocation.core;
 
 public class Constants {
 
+    /**
+     *
+     */
+
     //服务开始
     public static final String START_SERVICE = "location_service_start";
     //服务停止
     public static final String STOP_SERVICE = "location_service_stop";
-
+    // tag of addressList
+    public static final String TAG_ADDRESS_LIST = "address_list";
 }
