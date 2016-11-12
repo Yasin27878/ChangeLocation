@@ -41,11 +41,10 @@ public class LocationService extends Service {
             if (mTheard != null) {
                 mTheard.isRuning = false;
             }
-            mTheard = new UpdateLocationTheard();
+            mTheard = UpdateLocationTheard.newInstance(this);
             List<Address> mAddressList = intent.getParcelableArrayListExtra(Constants.TAG_ADDRESS_LIST);
             for (Address address : mAddressList) {
                 Log.d(TAG, "onStartCommand: " + address.toString());
-
 
             }
 
